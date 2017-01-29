@@ -1,4 +1,18 @@
-ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('root')
-);
+const TodoForm = ({addTodo}) => {
+  // Input tracker
+  let input;
+
+  return (
+    <div>
+      <input ref={node => {
+        input = node;
+      }} />
+      <button onClick={() => {
+        addTodo(input.value);
+        input.value = '';
+      }}>
+        +
+      </button>
+    </div>
+  );
+};
